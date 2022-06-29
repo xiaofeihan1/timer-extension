@@ -1,0 +1,24 @@
+{
+    "name": "Timer",
+    "description": "A Microsoft Edge extension!",
+    "version": "1.0",
+    "manifest_version": 3,
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "timer.png"
+    },
+    "content_scripts": [
+        {
+            "matches": ["http://*/*", "https://*/*"],
+            "js": [
+                "content_script.js"
+            ]
+        }
+    ],
+    "background" : {
+        "service_worker": "background.js"
+    },
+    "permissions": [
+        "notifications"
+    ]
+}
